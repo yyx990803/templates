@@ -1,0 +1,16 @@
+{
+  "name": "{{name}}",
+  "version": "0.0.0",
+  "description": "cool project",
+  "main": "src/app.js",
+  "dependencies": {
+    "insert-css": "^0.2.0"
+  },
+  "devDependencies": {
+    "partialify": "^3.1.1",
+    "stylify": "^0.1.5"
+  },
+  "scripts": {
+    "dev": "watchify -e src/app.js -o build/build.js -t stylify -t partialify -v"
+  }
+}

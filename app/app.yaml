@@ -1,0 +1,33 @@
+application: google.com:cl-{{name}}
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^src/.*
+- ^assets/.*
+- ^(.*/)?node_modules/.*
+- ^package\.json
+- ^component\.json
+- ^(.*/)?.*\.styl
+- ^(.*/)?.*\.md
+
+handlers:
+
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /(.*)
+  static_files: \1
+  upload: (.*)
